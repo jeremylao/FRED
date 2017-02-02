@@ -91,4 +91,3 @@ for x in range (0, number_series):
 
     plt.plot(datelist, data_array)
     plt.gcf().autofmt_xdate()
-
