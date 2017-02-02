@@ -64,15 +64,3 @@ plt.plot(datelist, gdp_array)
 plt.gcf().autofmt_xdate()
 plt.show()
 
-
-
-#code that i used to debug in creating this interface
-
-#rolling = pd.Series(number)
-#rolling = pd.rolling_mean(gdp_array,12)
-#print(data["observations"][1]["date"])
-#for x in range (0,number):
-#    print(gdp_array[x])
-#dates = plt.dates.date2num(date_array)
-#start_date = "1990-01-01"
-#end_date = "9999-12-31"
