@@ -15,6 +15,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import csv
+import os
+import sys
+
+
+path = "csv_folder"
+
+if not os.path.exists(path):
+    os.mkdir(path)
+
+    
 
 api_key = input("Input API Key: ")
 api_key = '&api_key='+api_key
@@ -67,7 +77,7 @@ for x in range (0, number_series):
         tempdate = dt.datetime.strptime(date_list[z+1], "%Y-%m-%d")
         datelist[z] =dt.datetime.date(tempdate)
 
-    myfile = open(series_name_string[x]+'.csv', 'wt', newline='')
+    myfile = open(path+'/'+series_name_string[x]+'.csv', 'wt', newline='')
     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
     wr.writerow( ('date', series_name_string[x]))
 
@@ -77,25 +87,8 @@ for x in range (0, number_series):
     myfile.close()
 
     fig = plt.figure()
-    #print(series_name_string[x+1])
-    #temp = series_name_string[x+1]
     fig.suptitle(temp, fontsize=14, fontweight='bold')
 
     plt.plot(datelist, data_array)
     plt.gcf().autofmt_xdate()
-    plt.show()
 
-
-
-
-
-#code that i used to debug in creating this interface
-
-#rolling = pd.Series(number)
-#rolling = pd.rolling_mean(gdp_array,12)
-#print(data["observations"][1]["date"])
-#for x in range (0,number):
-#    print(gdp_array[x])
-#dates = plt.dates.date2num(date_array)
-#start_date = "1990-01-01"
-#end_date = "9999-12-31"
