@@ -8,3 +8,7 @@ FRED_PDF_PLOT.py is a tool that will produce a PDF of the timeplot(s) of all the
 
 
 Rights Reserved: Jeremy Lao
+
+
+
+Development Notes: Take the date of the series once, instead of in each iteration
